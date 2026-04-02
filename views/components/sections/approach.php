@@ -4,7 +4,7 @@ $approachSteps = $app['approach'] ?? [];
 ?>
 <section id="approach" class="bg-slate-50">
   <div class="section-container max-w-6xl mx-auto px-4">
-    <?php component('components/section-header', [
+    <?php component('sections/_headline', [
       'eyebrow' => 'Our Approach',
       'title' => 'Structured, Evidence-Based Advisory',
       'subtitle' => 'Combining technical expertise and strategic insight to deliver actionable, compliant, and efficient green building solutions.',
