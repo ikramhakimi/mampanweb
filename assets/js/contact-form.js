@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const phoneInput = document.getElementById('phone');
   const phoneError = document.getElementById('phoneError');
-  const submitBtn = document.getElementById('submitBtn');
-  const inputs = form.querySelectorAll('.form-input');
+  const submitBtn  = document.getElementById('submitBtn');
+  const inputs     = form.querySelectorAll('.form-input');
 
   inputs.forEach(input => {
     input.addEventListener('input', function () {
@@ -42,11 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = phoneInput.value.trim();
+    const name    = document.getElementById('name').value.trim();
+    const email   = document.getElementById('email').value.trim();
+    const phone   = phoneInput.value.trim();
     const service = document.getElementById('service').value;
-    const title = document.getElementById('title').value.trim();
+    const title   = document.getElementById('title').value.trim();
     const message = document.getElementById('message').value.trim();
 
     if (!isValidMYPhone(phone)) {
@@ -73,9 +73,9 @@ document.addEventListener('DOMContentLoaded', () => {
       `*Project Message*\n` +
       `${message}`;
 
-    const encodedText = encodeURIComponent(text);
+    const encodedText    = encodeURIComponent(text);
     const whatsappNumber = form.getAttribute('data-whatsapp') || '60193993355';
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+    const whatsappURL    = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
 
     submitBtn.classList.add('success-animation');
 
@@ -87,4 +87,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 700);
   });
 });
-
