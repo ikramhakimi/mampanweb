@@ -32,18 +32,22 @@ if (!function_exists('component')) {
     $targets = [];
 
     // Support explicit paths like "sections/services", "partials/site-header", "components/card".
+    if (strpos($file, 'sections/') === 0) {
+      $targets[] = [__DIR__ . '/../views/components/sections', substr($file, strlen('sections/'))];
+    }
+
     if (strpos($file, '/') !== false) {
       $targets[] = [__DIR__ . '/../views', $file];
     }
 
-    // Backward compatibility alias: "section-services" => "views/sections/services.php".
+    // Backward compatibility alias: "section-services" => "views/components/sections/services.php".
     if (strpos($file, 'section-') === 0) {
-      $targets[] = [__DIR__ . '/../views/sections', substr($file, strlen('section-'))];
+      $targets[] = [__DIR__ . '/../views/components/sections', substr($file, strlen('section-'))];
     }
 
     $targets[] = [__DIR__ . '/../views/components', $file];
     $targets[] = [__DIR__ . '/../views/partials', $file];
-    $targets[] = [__DIR__ . '/../views/sections', $file];
+    $targets[] = [__DIR__ . '/../views/components/sections', $file];
 
     $component_path = null;
     foreach ($targets as [$root, $target_file]) {

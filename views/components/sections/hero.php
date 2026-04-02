@@ -1,5 +1,5 @@
 <?php
-$app = require __DIR__ . '/../../config/app.php';
+$app = require __DIR__ . '/../../../config/app.php';
 ?>
 <section id="hero" class="relative overflow-hidden bg-slate-950 pt-28 text-slate-100 md:pt-36">
   <div class="absolute -left-24 top-20 h-56 w-56 rounded-full bg-emerald-400/20 blur-3xl"></div>

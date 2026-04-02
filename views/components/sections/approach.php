@@ -1,5 +1,6 @@
 <?php
-$approachSteps = require __DIR__ . '/../../config/approach.php';
+$app = require __DIR__ . '/../../../config/app.php';
+$approachSteps = $app['approach'] ?? [];
 ?>
 <section id="approach" class="bg-slate-50">
   <div class="section-container max-w-6xl mx-auto px-4">

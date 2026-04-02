@@ -15,8 +15,8 @@
 
 ## View Structure
 - `views/pages` - routable pages (`home.php`, `404.php`).
-- `views/sections` - page sections (`hero`, `services`, `approach`, `about-us`, etc.).
-- `views/components` - reusable content blocks (for example `contact-form`, `about-content`).
+- `views/components/sections` - page sections (`hero`, `services`, `approach`, `about-us`, etc.).
+- `views/components` - reusable content blocks (for example `contact-form`, `about-content`, `section-header`).
 - `views/partials` - shared UI partials (`site-header`, `section-header`).
 
 ## Routing
@@ -44,6 +44,7 @@
 ## Development Notes
 - Keep PHP includes path-safe and relative to current file.
 - Prefer reusable blocks in `views/components` when content is shared.
+- Keep app and content data in `config/app.php` (`services` and `approach` are nested keys).
 - Run syntax checks after changes:
   - `./scripts/check-style.sh`
   - `php -l index.php`
